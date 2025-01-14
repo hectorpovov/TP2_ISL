@@ -1,0 +1,22 @@
+
+State Machine - |state_machine_race|present_state
+Name present_state.sigfalha present_state.sig6 present_state.sig5 present_state.sig4 present_state.sig3 present_state.sig2 present_state.sig1 present_state.sig0 
+present_state.sig0 0 0 0 0 0 0 0 0 
+present_state.sig1 0 0 0 0 0 0 1 1 
+present_state.sig2 0 0 0 0 0 1 0 1 
+present_state.sig3 0 0 0 0 1 0 0 1 
+present_state.sig4 0 0 0 1 0 0 0 1 
+present_state.sig5 0 0 1 0 0 0 0 1 
+present_state.sig6 0 1 0 0 0 0 0 1 
+present_state.sigfalha 1 0 0 0 0 0 0 1 
+
+State Machine - |state_machine_race|next_state
+Name next_state.sigfalha next_state.sig6 next_state.sig5 next_state.sig4 next_state.sig3 next_state.sig2 next_state.sig1 next_state.sig0 
+next_state.sig0 0 0 0 0 0 0 0 0 
+next_state.sig1 0 0 0 0 0 0 1 1 
+next_state.sig2 0 0 0 0 0 1 0 1 
+next_state.sig3 0 0 0 0 1 0 0 1 
+next_state.sig4 0 0 0 1 0 0 0 1 
+next_state.sig5 0 0 1 0 0 0 0 1 
+next_state.sig6 0 1 0 0 0 0 0 1 
+next_state.sigfalha 1 0 0 0 0 0 0 1 

@@ -1,0 +1,1228 @@
+Timing Analyzer report for state_machine_race
+Tue Jan 14 10:12:58 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk'
+ 13. Slow 1200mV 85C Model Hold: 'clk'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'clk'
+ 22. Slow 1200mV 0C Model Hold: 'clk'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'clk'
+ 30. Fast 1200mV 0C Model Hold: 'clk'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; state_machine_race                                  ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 169.15 MHz ; 169.15 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clk   ; -2.456 ; -39.571            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clk   ; 0.402 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; clk   ; -3.000 ; -36.410                          ;
++-------+--------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                          ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -2.456 ; present_state.sig3     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.785      ;
+; -2.455 ; present_state.sig3     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.784      ;
+; -2.453 ; present_state.sig3     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.782      ;
+; -2.350 ; present_state.sig5     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.679      ;
+; -2.349 ; present_state.sig5     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.678      ;
+; -2.347 ; present_state.sig5     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.676      ;
+; -2.336 ; present_state.sig0     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.665      ;
+; -2.335 ; present_state.sig0     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.664      ;
+; -2.333 ; present_state.sig0     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.662      ;
+; -2.299 ; present_state.sig6     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.169     ; 2.628      ;
+; -2.275 ; present_state.sigfalha ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.169     ; 2.604      ;
+; -2.259 ; present_state.sig4     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.587      ;
+; -2.221 ; present_state.sig4     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.549      ;
+; -2.213 ; present_state.sig3     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.171     ; 2.540      ;
+; -2.210 ; present_state.sig3     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.923      ;
+; -2.210 ; present_state.sig3     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.923      ;
+; -2.175 ; present_state.sig6     ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 2.505      ;
+; -2.161 ; present_state.sig3     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.170     ; 2.489      ;
+; -2.142 ; present_state.sig4     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.471      ;
+; -2.141 ; present_state.sig4     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.470      ;
+; -2.139 ; present_state.sig4     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.468      ;
+; -2.107 ; present_state.sig5     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.171     ; 2.434      ;
+; -2.104 ; present_state.sig5     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.817      ;
+; -2.104 ; present_state.sig5     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.817      ;
+; -2.071 ; present_state.sig4     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.171     ; 2.398      ;
+; -2.061 ; present_state.sig3     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.389      ;
+; -2.055 ; present_state.sig5     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.170     ; 2.383      ;
+; -1.983 ; present_state.sig3     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.311      ;
+; -1.982 ; present_state.sig1     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.310      ;
+; -1.940 ; present_state.sig5     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.268      ;
+; -1.899 ; present_state.sig6     ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 2.229      ;
+; -1.888 ; present_state.sig1     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.171     ; 2.215      ;
+; -1.875 ; present_state.sig2     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.588      ;
+; -1.875 ; present_state.sig2     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.588      ;
+; -1.854 ; present_state.sig2     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.182      ;
+; -1.847 ; present_state.sig1     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.560      ;
+; -1.847 ; present_state.sig1     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.560      ;
+; -1.806 ; present_state.sig5     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.134      ;
+; -1.798 ; present_state.sig1     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.170     ; 2.126      ;
+; -1.760 ; present_state.sig2     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.171     ; 2.087      ;
+; -1.732 ; present_state.sig1     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.060      ;
+; -1.729 ; present_state.sig1     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.169     ; 2.058      ;
+; -1.710 ; present_state.sig4     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.170     ; 2.038      ;
+; -1.686 ; present_state.sig0     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.170     ; 2.014      ;
+; -1.669 ; led~reg0               ; next_state.sig4     ; clk          ; clk         ; 1.000        ; -0.080     ; 2.587      ;
+; -1.660 ; present_state.sig0     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.373      ;
+; -1.660 ; present_state.sig0     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.373      ;
+; -1.655 ; present_state.sig0     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.170     ; 1.983      ;
+; -1.648 ; start_led_e_next_state ; next_state.sig5     ; clk          ; clk         ; 1.000        ; 0.306      ; 2.952      ;
+; -1.648 ; start_led_e_next_state ; next_state.sig1     ; clk          ; clk         ; 1.000        ; 0.306      ; 2.952      ;
+; -1.648 ; present_state.sigfalha ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.978      ;
+; -1.604 ; present_state.sig2     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.170     ; 1.932      ;
+; -1.603 ; present_state.sig4     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.316      ;
+; -1.603 ; present_state.sig4     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.215      ; 2.316      ;
+; -1.597 ; present_state.sig0     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.171     ; 1.924      ;
+; -1.587 ; led~reg0               ; next_state.sig5     ; clk          ; clk         ; 1.000        ; 0.305      ; 2.890      ;
+; -1.587 ; led~reg0               ; next_state.sig1     ; clk          ; clk         ; 1.000        ; 0.305      ; 2.890      ;
+; -1.587 ; present_state.sig2     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.916      ;
+; -1.583 ; present_state.sig0     ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.912      ;
+; -1.580 ; next_state.sig6        ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.080     ; 2.498      ;
+; -1.574 ; present_state.sig1     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.903      ;
+; -1.571 ; present_state.sig1     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.900      ;
+; -1.556 ; present_state.sigfalha ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.170     ; 1.884      ;
+; -1.548 ; present_state.sig2     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.170     ; 1.876      ;
+; -1.534 ; present_state.sig6     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.863      ;
+; -1.517 ; present_state.sig6     ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.170     ; 1.845      ;
+; -1.457 ; led~reg0               ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.080     ; 2.375      ;
+; -1.457 ; present_state.sig6     ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.787      ;
+; -1.446 ; present_state.sig2     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.775      ;
+; -1.445 ; present_state.sig2     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.774      ;
+; -1.377 ; present_state.sigfalha ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.707      ;
+; -1.377 ; present_state.sigfalha ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.707      ;
+; -1.377 ; present_state.sigfalha ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.707      ;
+; -1.371 ; present_state.sigfalha ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.701      ;
+; -1.345 ; start_present_state    ; present_state.sig4  ; clk          ; clk         ; 1.000        ; -0.078     ; 2.265      ;
+; -1.343 ; led~reg0               ; next_state.sig0     ; clk          ; clk         ; 1.000        ; -0.079     ; 2.262      ;
+; -1.342 ; led~reg0               ; next_state.sig2     ; clk          ; clk         ; 1.000        ; -0.079     ; 2.261      ;
+; -1.340 ; led~reg0               ; next_state.sig3     ; clk          ; clk         ; 1.000        ; -0.079     ; 2.259      ;
+; -1.295 ; led~reg0               ; display[3]~reg0     ; clk          ; clk         ; 1.000        ; -0.079     ; 2.214      ;
+; -1.274 ; present_state.sig0     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.170     ; 1.602      ;
+; -1.246 ; present_state.sig0     ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.575      ;
+; -1.241 ; present_state.sig0     ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.570      ;
+; -1.241 ; present_state.sig0     ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.570      ;
+; -1.240 ; present_state.sig0     ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.569      ;
+; -1.238 ; present_state.sig0     ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.169     ; 1.567      ;
+; -1.213 ; next_state.sig4        ; next_state.sig4     ; clk          ; clk         ; 1.000        ; -0.080     ; 2.131      ;
+; -1.208 ; led~reg0               ; next_state.sigfalha ; clk          ; clk         ; 1.000        ; -0.081     ; 2.125      ;
+; -1.203 ; start_present_state    ; present_state.sig2  ; clk          ; clk         ; 1.000        ; -0.078     ; 2.123      ;
+; -1.197 ; start_present_state    ; present_state.sig3  ; clk          ; clk         ; 1.000        ; -0.078     ; 2.117      ;
+; -1.165 ; next_state.sig0        ; present_state.sig0  ; clk          ; clk         ; 0.500        ; 0.008      ; 1.671      ;
+; -1.153 ; start_led_e_next_state ; display[4]~reg0     ; clk          ; clk         ; 1.000        ; -0.078     ; 2.073      ;
+; -1.095 ; present_state.sig6     ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.425      ;
+; -1.059 ; present_state.sig6     ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.389      ;
+; -1.058 ; present_state.sig6     ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.168     ; 1.388      ;
+; -1.042 ; start_led_e_next_state ; next_state.sig2     ; clk          ; clk         ; 1.000        ; -0.078     ; 1.962      ;
+; -1.040 ; start_led_e_next_state ; next_state.sig3     ; clk          ; clk         ; 1.000        ; -0.078     ; 1.960      ;
+; -1.037 ; start_led_e_next_state ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.079     ; 1.956      ;
+; -1.032 ; start_led_e_next_state ; led~reg0            ; clk          ; clk         ; 1.000        ; -0.079     ; 1.951      ;
+; -1.032 ; start_present_state    ; present_state.sig0  ; clk          ; clk         ; 1.000        ; -0.078     ; 1.952      ;
+; -1.029 ; next_state.sig4        ; present_state.sig4  ; clk          ; clk         ; 0.500        ; 0.010      ; 1.537      ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                                             ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.402 ; next_state.sig0        ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; next_state.sig2        ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; next_state.sig3        ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
+; 0.403 ; led~reg0               ; led~reg0               ; clk          ; clk         ; 0.000        ; 0.080      ; 0.669      ;
+; 0.638 ; start_led_e_next_state ; next_state.sig1        ; clk          ; clk         ; 0.000        ; 0.482      ; 1.306      ;
+; 0.641 ; start_led_e_next_state ; next_state.sig5        ; clk          ; clk         ; 0.000        ; 0.482      ; 1.309      ;
+; 0.673 ; start_led_e_next_state ; display[5]~reg0        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.939      ;
+; 0.729 ; start_present_state    ; present_state.sigfalha ; clk          ; clk         ; 0.000        ; 0.080      ; 0.995      ;
+; 0.964 ; next_state.sigfalha    ; present_state.sigfalha ; clk          ; clk         ; -0.500       ; 0.170      ; 0.840      ;
+; 0.990 ; start_present_state    ; present_state.sig6     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.256      ;
+; 1.005 ; start_present_state    ; present_state.sig5     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.272      ;
+; 1.006 ; start_present_state    ; present_state.sig1     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.273      ;
+; 1.027 ; next_state.sig6        ; present_state.sig6     ; clk          ; clk         ; -0.500       ; 0.169      ; 0.902      ;
+; 1.042 ; next_state.sigfalha    ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.080      ; 1.308      ;
+; 1.080 ; led~reg0               ; display[2]~reg0        ; clk          ; clk         ; 0.000        ; 0.082      ; 1.348      ;
+; 1.205 ; next_state.sig5        ; present_state.sig5     ; clk          ; clk         ; -0.500       ; -0.215     ; 0.696      ;
+; 1.244 ; start_led_e_next_state ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.080      ; 1.510      ;
+; 1.312 ; next_state.sig4        ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.578      ;
+; 1.313 ; present_state.sig0     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.391      ; 1.410      ;
+; 1.342 ; led~reg0               ; display[5]~reg0        ; clk          ; clk         ; 0.000        ; 0.079      ; 1.607      ;
+; 1.344 ; start_led_e_next_state ; display[0]~reg0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.613      ;
+; 1.352 ; start_led_e_next_state ; display[3]~reg0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.621      ;
+; 1.378 ; start_led_e_next_state ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.645      ;
+; 1.413 ; next_state.sig6        ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.679      ;
+; 1.422 ; led~reg0               ; display[4]~reg0        ; clk          ; clk         ; 0.000        ; 0.082      ; 1.690      ;
+; 1.438 ; start_led_e_next_state ; display[6]~reg0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.707      ;
+; 1.438 ; start_led_e_next_state ; display[2]~reg0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.707      ;
+; 1.439 ; start_led_e_next_state ; display[1]~reg0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.708      ;
+; 1.470 ; start_led_e_next_state ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.737      ;
+; 1.472 ; start_led_e_next_state ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.741      ;
+; 1.474 ; start_led_e_next_state ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.743      ;
+; 1.477 ; start_led_e_next_state ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.746      ;
+; 1.492 ; start_led_e_next_state ; led~reg0               ; clk          ; clk         ; 0.000        ; 0.081      ; 1.759      ;
+; 1.506 ; present_state.sigfalha ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; -0.009     ; 1.203      ;
+; 1.532 ; led~reg0               ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.798      ;
+; 1.536 ; next_state.sig3        ; present_state.sig3     ; clk          ; clk         ; -0.500       ; 0.169      ; 1.411      ;
+; 1.539 ; next_state.sig2        ; present_state.sig2     ; clk          ; clk         ; -0.500       ; 0.169      ; 1.414      ;
+; 1.548 ; present_state.sig0     ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; -0.011     ; 1.243      ;
+; 1.551 ; present_state.sigfalha ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.251      ;
+; 1.555 ; present_state.sig5     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; 0.391      ; 1.652      ;
+; 1.560 ; next_state.sig4        ; present_state.sig4     ; clk          ; clk         ; -0.500       ; 0.170      ; 1.436      ;
+; 1.566 ; start_led_e_next_state ; display[4]~reg0        ; clk          ; clk         ; 0.000        ; 0.083      ; 1.835      ;
+; 1.573 ; next_state.sig1        ; present_state.sig1     ; clk          ; clk         ; -0.500       ; -0.215     ; 1.064      ;
+; 1.614 ; start_present_state    ; present_state.sig0     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.881      ;
+; 1.619 ; present_state.sig6     ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.319      ;
+; 1.619 ; present_state.sig6     ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.319      ;
+; 1.619 ; present_state.sig6     ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.319      ;
+; 1.620 ; present_state.sig6     ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.320      ;
+; 1.621 ; present_state.sig6     ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.321      ;
+; 1.653 ; present_state.sig1     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.391      ; 1.750      ;
+; 1.662 ; next_state.sig0        ; present_state.sig0     ; clk          ; clk         ; -0.500       ; 0.169      ; 1.537      ;
+; 1.666 ; led~reg0               ; display[3]~reg0        ; clk          ; clk         ; 0.000        ; 0.082      ; 1.934      ;
+; 1.699 ; present_state.sig4     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; 0.391      ; 1.796      ;
+; 1.749 ; led~reg0               ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.079      ; 2.014      ;
+; 1.753 ; start_present_state    ; present_state.sig3     ; clk          ; clk         ; 0.000        ; 0.081      ; 2.020      ;
+; 1.758 ; start_present_state    ; present_state.sig2     ; clk          ; clk         ; 0.000        ; 0.081      ; 2.025      ;
+; 1.769 ; present_state.sig0     ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.467      ;
+; 1.773 ; present_state.sig2     ; next_state.sig2        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.471      ;
+; 1.777 ; present_state.sig0     ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.475      ;
+; 1.781 ; present_state.sig0     ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.479      ;
+; 1.781 ; present_state.sig0     ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.479      ;
+; 1.782 ; present_state.sig0     ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.480      ;
+; 1.802 ; present_state.sigfalha ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; -0.009     ; 1.499      ;
+; 1.826 ; present_state.sig0     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.010     ; 1.522      ;
+; 1.834 ; present_state.sig5     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.010     ; 1.530      ;
+; 1.848 ; led~reg0               ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.080      ; 2.114      ;
+; 1.850 ; led~reg0               ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.082      ; 2.118      ;
+; 1.851 ; led~reg0               ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.082      ; 2.119      ;
+; 1.853 ; led~reg0               ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.082      ; 2.121      ;
+; 1.872 ; present_state.sig6     ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; -0.009     ; 1.569      ;
+; 1.892 ; present_state.sig2     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.590      ;
+; 1.895 ; present_state.sig2     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.593      ;
+; 1.909 ; present_state.sigfalha ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.609      ;
+; 1.910 ; present_state.sigfalha ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.610      ;
+; 1.910 ; present_state.sigfalha ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.610      ;
+; 1.917 ; present_state.sigfalha ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.617      ;
+; 1.917 ; start_present_state    ; present_state.sig4     ; clk          ; clk         ; 0.000        ; 0.081      ; 2.184      ;
+; 1.921 ; present_state.sig6     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.619      ;
+; 1.978 ; present_state.sig3     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.676      ;
+; 1.983 ; present_state.sig6     ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.683      ;
+; 1.991 ; present_state.sig0     ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.689      ;
+; 2.020 ; present_state.sig1     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.718      ;
+; 2.021 ; present_state.sig1     ; next_state.sig2        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.719      ;
+; 2.023 ; present_state.sig1     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.721      ;
+; 2.042 ; present_state.sig2     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.010     ; 1.738      ;
+; 2.059 ; present_state.sig0     ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; -0.011     ; 1.754      ;
+; 2.064 ; present_state.sig2     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.010     ; 1.760      ;
+; 2.105 ; present_state.sig4     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.391      ; 2.202      ;
+; 2.140 ; present_state.sig0     ; next_state.sig4        ; clk          ; clk         ; -0.500       ; -0.010     ; 1.836      ;
+; 2.149 ; present_state.sigfalha ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; -0.006     ; 1.849      ;
+; 2.152 ; present_state.sig4     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.010     ; 1.848      ;
+; 2.154 ; present_state.sig0     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; 0.391      ; 2.251      ;
+; 2.164 ; led~reg0               ; next_state.sig5        ; clk          ; clk         ; 0.000        ; 0.481      ; 2.831      ;
+; 2.164 ; led~reg0               ; next_state.sig1        ; clk          ; clk         ; 0.000        ; 0.481      ; 2.831      ;
+; 2.190 ; present_state.sig5     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.391      ; 2.287      ;
+; 2.192 ; present_state.sig1     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.010     ; 1.888      ;
+; 2.203 ; present_state.sig0     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.010     ; 1.899      ;
+; 2.229 ; present_state.sig1     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.010     ; 1.925      ;
+; 2.230 ; present_state.sig2     ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; -0.011     ; 1.925      ;
+; 2.235 ; present_state.sig0     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; -0.008     ; 1.933      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 186.15 MHz ; 186.15 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -2.186 ; -34.659           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.354 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -36.410                         ;
++-------+--------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                           ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -2.186 ; present_state.sig3     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.550      ;
+; -2.184 ; present_state.sig3     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.548      ;
+; -2.183 ; present_state.sig3     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.547      ;
+; -2.086 ; present_state.sig5     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.450      ;
+; -2.084 ; present_state.sig5     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.448      ;
+; -2.083 ; present_state.sig5     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.447      ;
+; -2.053 ; present_state.sig0     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.417      ;
+; -2.051 ; present_state.sig0     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.415      ;
+; -2.050 ; present_state.sig0     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.414      ;
+; -1.990 ; present_state.sig6     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.135     ; 2.354      ;
+; -1.972 ; present_state.sig3     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.137     ; 2.334      ;
+; -1.968 ; present_state.sig3     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.683      ;
+; -1.968 ; present_state.sig3     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.683      ;
+; -1.968 ; present_state.sigfalha ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.135     ; 2.332      ;
+; -1.957 ; present_state.sig4     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.136     ; 2.320      ;
+; -1.937 ; present_state.sig3     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.136     ; 2.300      ;
+; -1.934 ; present_state.sig6     ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 2.299      ;
+; -1.911 ; present_state.sig4     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.136     ; 2.274      ;
+; -1.877 ; present_state.sig4     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.241      ;
+; -1.875 ; present_state.sig4     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.239      ;
+; -1.874 ; present_state.sig4     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.135     ; 2.238      ;
+; -1.872 ; present_state.sig5     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.137     ; 2.234      ;
+; -1.868 ; present_state.sig5     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.583      ;
+; -1.868 ; present_state.sig5     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.583      ;
+; -1.843 ; present_state.sig4     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.137     ; 2.205      ;
+; -1.837 ; present_state.sig5     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.136     ; 2.200      ;
+; -1.804 ; present_state.sig3     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.136     ; 2.167      ;
+; -1.794 ; present_state.sig3     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.136     ; 2.157      ;
+; -1.737 ; present_state.sig1     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.136     ; 2.100      ;
+; -1.689 ; present_state.sig6     ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 2.054      ;
+; -1.680 ; present_state.sig5     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.136     ; 2.043      ;
+; -1.652 ; present_state.sig1     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.137     ; 2.014      ;
+; -1.645 ; present_state.sig2     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.360      ;
+; -1.645 ; present_state.sig2     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.360      ;
+; -1.629 ; present_state.sig1     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.344      ;
+; -1.629 ; present_state.sig1     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.344      ;
+; -1.618 ; present_state.sig2     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.981      ;
+; -1.598 ; present_state.sig1     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.136     ; 1.961      ;
+; -1.549 ; present_state.sig5     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.912      ;
+; -1.533 ; present_state.sig2     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.137     ; 1.895      ;
+; -1.516 ; present_state.sig1     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.879      ;
+; -1.499 ; led~reg0               ; next_state.sig4     ; clk          ; clk         ; 1.000        ; -0.071     ; 2.427      ;
+; -1.476 ; present_state.sig1     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.840      ;
+; -1.466 ; present_state.sig0     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.829      ;
+; -1.459 ; present_state.sig4     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.136     ; 1.822      ;
+; -1.443 ; present_state.sig0     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.806      ;
+; -1.440 ; present_state.sigfalha ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.805      ;
+; -1.439 ; start_led_e_next_state ; next_state.sig5     ; clk          ; clk         ; 1.000        ; 0.281      ; 2.719      ;
+; -1.439 ; start_led_e_next_state ; next_state.sig1     ; clk          ; clk         ; 1.000        ; 0.281      ; 2.719      ;
+; -1.438 ; present_state.sig0     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.153      ;
+; -1.438 ; present_state.sig0     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.153      ;
+; -1.402 ; present_state.sig0     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.137     ; 1.764      ;
+; -1.397 ; present_state.sig2     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.760      ;
+; -1.382 ; present_state.sig4     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.097      ;
+; -1.382 ; present_state.sig4     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; 0.216      ; 2.097      ;
+; -1.377 ; present_state.sig1     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.741      ;
+; -1.376 ; led~reg0               ; next_state.sig5     ; clk          ; clk         ; 1.000        ; 0.281      ; 2.656      ;
+; -1.376 ; led~reg0               ; next_state.sig1     ; clk          ; clk         ; 1.000        ; 0.281      ; 2.656      ;
+; -1.374 ; present_state.sig1     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.738      ;
+; -1.362 ; present_state.sig2     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.136     ; 1.725      ;
+; -1.347 ; present_state.sig2     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.711      ;
+; -1.346 ; present_state.sig0     ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.710      ;
+; -1.325 ; present_state.sigfalha ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.688      ;
+; -1.324 ; next_state.sig6        ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.071     ; 2.252      ;
+; -1.308 ; present_state.sig6     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.672      ;
+; -1.293 ; present_state.sig6     ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.136     ; 1.656      ;
+; -1.284 ; present_state.sig6     ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.649      ;
+; -1.258 ; present_state.sig2     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.622      ;
+; -1.256 ; present_state.sig2     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.620      ;
+; -1.196 ; led~reg0               ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.071     ; 2.124      ;
+; -1.195 ; present_state.sigfalha ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.560      ;
+; -1.190 ; present_state.sigfalha ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.555      ;
+; -1.190 ; present_state.sigfalha ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.555      ;
+; -1.189 ; present_state.sigfalha ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.554      ;
+; -1.186 ; start_present_state    ; present_state.sig4  ; clk          ; clk         ; 1.000        ; -0.070     ; 2.115      ;
+; -1.147 ; led~reg0               ; next_state.sig0     ; clk          ; clk         ; 1.000        ; -0.070     ; 2.076      ;
+; -1.145 ; led~reg0               ; next_state.sig2     ; clk          ; clk         ; 1.000        ; -0.070     ; 2.074      ;
+; -1.144 ; led~reg0               ; next_state.sig3     ; clk          ; clk         ; 1.000        ; -0.070     ; 2.073      ;
+; -1.091 ; present_state.sig0     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.136     ; 1.454      ;
+; -1.072 ; present_state.sig0     ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.436      ;
+; -1.071 ; present_state.sig0     ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.435      ;
+; -1.071 ; present_state.sig0     ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.435      ;
+; -1.068 ; present_state.sig0     ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.432      ;
+; -1.060 ; present_state.sig0     ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.135     ; 1.424      ;
+; -1.054 ; led~reg0               ; display[3]~reg0     ; clk          ; clk         ; 1.000        ; -0.070     ; 1.983      ;
+; -1.023 ; next_state.sig0        ; present_state.sig0  ; clk          ; clk         ; 0.500        ; -0.009     ; 1.513      ;
+; -1.023 ; start_present_state    ; present_state.sig2  ; clk          ; clk         ; 1.000        ; -0.070     ; 1.952      ;
+; -1.019 ; led~reg0               ; next_state.sigfalha ; clk          ; clk         ; 1.000        ; -0.072     ; 1.946      ;
+; -1.019 ; start_present_state    ; present_state.sig3  ; clk          ; clk         ; 1.000        ; -0.070     ; 1.948      ;
+; -0.982 ; next_state.sig4        ; next_state.sig4     ; clk          ; clk         ; 1.000        ; -0.071     ; 1.910      ;
+; -0.932 ; start_led_e_next_state ; display[4]~reg0     ; clk          ; clk         ; 1.000        ; -0.070     ; 1.861      ;
+; -0.918 ; present_state.sig6     ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.283      ;
+; -0.917 ; next_state.sig1        ; present_state.sig1  ; clk          ; clk         ; 0.500        ; -0.374     ; 1.042      ;
+; -0.911 ; present_state.sig6     ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.276      ;
+; -0.909 ; present_state.sig6     ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.134     ; 1.274      ;
+; -0.898 ; next_state.sig4        ; present_state.sig4  ; clk          ; clk         ; 0.500        ; -0.007     ; 1.390      ;
+; -0.887 ; start_present_state    ; present_state.sig0  ; clk          ; clk         ; 1.000        ; -0.070     ; 1.816      ;
+; -0.875 ; next_state.sig2        ; present_state.sig2  ; clk          ; clk         ; 0.500        ; -0.009     ; 1.365      ;
+; -0.871 ; next_state.sig3        ; present_state.sig3  ; clk          ; clk         ; 0.500        ; -0.009     ; 1.361      ;
+; -0.857 ; present_state.sigfalha ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.136     ; 1.220      ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk'                                                                                              ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.354 ; next_state.sig0        ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; next_state.sig2        ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; next_state.sig3        ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.355 ; led~reg0               ; led~reg0               ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
+; 0.599 ; start_led_e_next_state ; next_state.sig1        ; clk          ; clk         ; 0.000        ; 0.439      ; 1.209      ;
+; 0.603 ; start_led_e_next_state ; next_state.sig5        ; clk          ; clk         ; 0.000        ; 0.439      ; 1.213      ;
+; 0.615 ; start_led_e_next_state ; display[5]~reg0        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.858      ;
+; 0.664 ; start_present_state    ; present_state.sigfalha ; clk          ; clk         ; 0.000        ; 0.071      ; 0.906      ;
+; 0.908 ; start_present_state    ; present_state.sig6     ; clk          ; clk         ; 0.000        ; 0.071      ; 1.150      ;
+; 0.927 ; start_present_state    ; present_state.sig5     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.170      ;
+; 0.928 ; start_present_state    ; present_state.sig1     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.171      ;
+; 0.942 ; next_state.sigfalha    ; present_state.sigfalha ; clk          ; clk         ; -0.500       ; 0.136      ; 0.769      ;
+; 0.956 ; next_state.sigfalha    ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.072      ; 1.199      ;
+; 0.998 ; led~reg0               ; display[2]~reg0        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.242      ;
+; 1.009 ; next_state.sig6        ; present_state.sig6     ; clk          ; clk         ; -0.500       ; 0.135      ; 0.835      ;
+; 1.145 ; start_led_e_next_state ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.072      ; 1.388      ;
+; 1.165 ; next_state.sig5        ; present_state.sig5     ; clk          ; clk         ; -0.500       ; -0.216     ; 0.640      ;
+; 1.208 ; next_state.sig4        ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.071      ; 1.450      ;
+; 1.217 ; present_state.sig0     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.374      ; 1.282      ;
+; 1.231 ; start_led_e_next_state ; display[3]~reg0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.476      ;
+; 1.238 ; led~reg0               ; display[5]~reg0        ; clk          ; clk         ; 0.000        ; 0.071      ; 1.480      ;
+; 1.243 ; start_led_e_next_state ; display[0]~reg0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.488      ;
+; 1.272 ; start_led_e_next_state ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.072      ; 1.515      ;
+; 1.299 ; start_led_e_next_state ; display[6]~reg0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.544      ;
+; 1.299 ; start_led_e_next_state ; display[2]~reg0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.544      ;
+; 1.300 ; start_led_e_next_state ; display[1]~reg0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.545      ;
+; 1.314 ; led~reg0               ; display[4]~reg0        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.558      ;
+; 1.318 ; next_state.sig6        ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.071      ; 1.560      ;
+; 1.336 ; start_led_e_next_state ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.072      ; 1.579      ;
+; 1.337 ; start_led_e_next_state ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.582      ;
+; 1.338 ; start_led_e_next_state ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.583      ;
+; 1.342 ; start_led_e_next_state ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.587      ;
+; 1.350 ; start_led_e_next_state ; led~reg0               ; clk          ; clk         ; 0.000        ; 0.072      ; 1.593      ;
+; 1.389 ; led~reg0               ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.071      ; 1.631      ;
+; 1.406 ; present_state.sigfalha ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; 0.008      ; 1.105      ;
+; 1.438 ; present_state.sig5     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; 0.374      ; 1.503      ;
+; 1.444 ; present_state.sigfalha ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.145      ;
+; 1.450 ; present_state.sig0     ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; 0.007      ; 1.148      ;
+; 1.451 ; start_led_e_next_state ; display[4]~reg0        ; clk          ; clk         ; 0.000        ; 0.074      ; 1.696      ;
+; 1.451 ; start_present_state    ; present_state.sig0     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.694      ;
+; 1.480 ; next_state.sig1        ; present_state.sig1     ; clk          ; clk         ; -0.500       ; -0.216     ; 0.955      ;
+; 1.484 ; next_state.sig3        ; present_state.sig3     ; clk          ; clk         ; -0.500       ; 0.135      ; 1.310      ;
+; 1.486 ; next_state.sig2        ; present_state.sig2     ; clk          ; clk         ; -0.500       ; 0.135      ; 1.312      ;
+; 1.492 ; present_state.sig6     ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.193      ;
+; 1.492 ; present_state.sig6     ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.193      ;
+; 1.493 ; present_state.sig6     ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.194      ;
+; 1.494 ; present_state.sig6     ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.195      ;
+; 1.494 ; present_state.sig6     ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.195      ;
+; 1.502 ; next_state.sig4        ; present_state.sig4     ; clk          ; clk         ; -0.500       ; 0.136      ; 1.329      ;
+; 1.506 ; present_state.sig1     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.374      ; 1.571      ;
+; 1.540 ; led~reg0               ; display[3]~reg0        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.784      ;
+; 1.550 ; present_state.sig4     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; 0.374      ; 1.615      ;
+; 1.570 ; led~reg0               ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.071      ; 1.812      ;
+; 1.596 ; start_present_state    ; present_state.sig3     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.839      ;
+; 1.597 ; next_state.sig0        ; present_state.sig0     ; clk          ; clk         ; -0.500       ; 0.135      ; 1.423      ;
+; 1.601 ; start_present_state    ; present_state.sig2     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.844      ;
+; 1.612 ; present_state.sig2     ; next_state.sig2        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.312      ;
+; 1.631 ; present_state.sig0     ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.331      ;
+; 1.634 ; present_state.sig0     ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.334      ;
+; 1.634 ; present_state.sig0     ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.334      ;
+; 1.635 ; present_state.sig0     ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.335      ;
+; 1.653 ; present_state.sig0     ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.353      ;
+; 1.669 ; present_state.sigfalha ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; 0.008      ; 1.368      ;
+; 1.672 ; led~reg0               ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.916      ;
+; 1.673 ; led~reg0               ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.917      ;
+; 1.675 ; led~reg0               ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.919      ;
+; 1.685 ; present_state.sig0     ; led~reg0               ; clk          ; clk         ; -0.500       ; 0.007      ; 1.383      ;
+; 1.694 ; led~reg0               ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.071      ; 1.936      ;
+; 1.717 ; present_state.sig5     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; 0.007      ; 1.415      ;
+; 1.721 ; start_present_state    ; present_state.sig4     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.964      ;
+; 1.736 ; present_state.sig2     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.436      ;
+; 1.737 ; present_state.sig6     ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; 0.008      ; 1.436      ;
+; 1.738 ; present_state.sig2     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.438      ;
+; 1.756 ; present_state.sigfalha ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.457      ;
+; 1.777 ; present_state.sigfalha ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.478      ;
+; 1.777 ; present_state.sigfalha ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.478      ;
+; 1.778 ; present_state.sigfalha ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.479      ;
+; 1.794 ; present_state.sig6     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; 0.008      ; 1.493      ;
+; 1.794 ; present_state.sig3     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.494      ;
+; 1.802 ; present_state.sig6     ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.503      ;
+; 1.853 ; present_state.sig1     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.553      ;
+; 1.854 ; present_state.sig1     ; next_state.sig2        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.554      ;
+; 1.855 ; present_state.sig1     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.555      ;
+; 1.863 ; present_state.sig0     ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.563      ;
+; 1.882 ; present_state.sig2     ; led~reg0               ; clk          ; clk         ; -0.500       ; 0.007      ; 1.580      ;
+; 1.891 ; present_state.sig0     ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; 0.007      ; 1.589      ;
+; 1.901 ; present_state.sig2     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; 0.007      ; 1.599      ;
+; 1.945 ; present_state.sig4     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.374      ; 2.010      ;
+; 1.967 ; present_state.sig0     ; next_state.sig4        ; clk          ; clk         ; -0.500       ; 0.007      ; 1.665      ;
+; 1.976 ; led~reg0               ; next_state.sig5        ; clk          ; clk         ; 0.000        ; 0.438      ; 2.585      ;
+; 1.976 ; led~reg0               ; next_state.sig1        ; clk          ; clk         ; 0.000        ; 0.438      ; 2.585      ;
+; 1.982 ; present_state.sigfalha ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; 0.010      ; 1.683      ;
+; 2.000 ; present_state.sig0     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; 0.374      ; 2.065      ;
+; 2.014 ; present_state.sig4     ; led~reg0               ; clk          ; clk         ; -0.500       ; 0.007      ; 1.712      ;
+; 2.017 ; present_state.sig5     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; 0.374      ; 2.082      ;
+; 2.018 ; present_state.sig1     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; 0.007      ; 1.716      ;
+; 2.026 ; present_state.sig0     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; 0.007      ; 1.724      ;
+; 2.038 ; present_state.sig1     ; led~reg0               ; clk          ; clk         ; -0.500       ; 0.007      ; 1.736      ;
+; 2.059 ; present_state.sig0     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; 0.009      ; 1.759      ;
+; 2.063 ; present_state.sig2     ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; 0.007      ; 1.761      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -1.274 ; -17.335           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.182 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -31.020                         ;
++-------+--------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                           ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -1.274 ; present_state.sig3     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.324      ;
+; -1.272 ; present_state.sig3     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.322      ;
+; -1.271 ; present_state.sig3     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.321      ;
+; -1.251 ; present_state.sig0     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.301      ;
+; -1.249 ; present_state.sig0     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.299      ;
+; -1.248 ; present_state.sig0     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.298      ;
+; -1.229 ; present_state.sig6     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.437     ; 1.279      ;
+; -1.229 ; present_state.sig5     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.279      ;
+; -1.227 ; present_state.sig5     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.277      ;
+; -1.226 ; present_state.sig5     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.276      ;
+; -1.214 ; present_state.sigfalha ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.437     ; 1.264      ;
+; -1.213 ; present_state.sig4     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.261      ;
+; -1.205 ; present_state.sig4     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.253      ;
+; -1.148 ; present_state.sig6     ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 1.200      ;
+; -1.148 ; present_state.sig4     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.198      ;
+; -1.146 ; present_state.sig4     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.196      ;
+; -1.145 ; present_state.sig4     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.195      ;
+; -1.142 ; present_state.sig3     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.441     ; 1.188      ;
+; -1.140 ; present_state.sig4     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.441     ; 1.186      ;
+; -1.126 ; present_state.sig3     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.357      ;
+; -1.126 ; present_state.sig3     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.357      ;
+; -1.125 ; present_state.sig3     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.173      ;
+; -1.098 ; present_state.sig3     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.439     ; 1.146      ;
+; -1.098 ; present_state.sig5     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.441     ; 1.144      ;
+; -1.082 ; present_state.sig5     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.313      ;
+; -1.082 ; present_state.sig5     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.313      ;
+; -1.078 ; present_state.sig3     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.126      ;
+; -1.062 ; present_state.sig5     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.110      ;
+; -1.045 ; present_state.sig5     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.439     ; 1.093      ;
+; -1.033 ; present_state.sig1     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.081      ;
+; -1.021 ; present_state.sig6     ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 1.073      ;
+; -0.996 ; present_state.sig1     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.441     ; 1.042      ;
+; -0.990 ; present_state.sig2     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.221      ;
+; -0.990 ; present_state.sig2     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.221      ;
+; -0.988 ; present_state.sig5     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.036      ;
+; -0.976 ; present_state.sig2     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.439     ; 1.024      ;
+; -0.966 ; present_state.sig1     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.197      ;
+; -0.966 ; present_state.sig1     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.197      ;
+; -0.959 ; present_state.sig1     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.437     ; 1.009      ;
+; -0.947 ; present_state.sig4     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.439     ; 0.995      ;
+; -0.939 ; present_state.sig2     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.441     ; 0.985      ;
+; -0.924 ; present_state.sig1     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.439     ; 0.972      ;
+; -0.911 ; present_state.sig1     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.439     ; 0.959      ;
+; -0.906 ; present_state.sig0     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.137      ;
+; -0.906 ; present_state.sig0     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.137      ;
+; -0.899 ; present_state.sigfalha ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.951      ;
+; -0.898 ; present_state.sig0     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.439     ; 0.946      ;
+; -0.894 ; present_state.sig0     ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.944      ;
+; -0.892 ; present_state.sig2     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.942      ;
+; -0.877 ; present_state.sig0     ; next_state.sig4     ; clk          ; clk         ; 0.500        ; -0.439     ; 0.925      ;
+; -0.875 ; present_state.sig4     ; next_state.sig5     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.106      ;
+; -0.875 ; present_state.sig4     ; next_state.sig1     ; clk          ; clk         ; 0.500        ; -0.256     ; 1.106      ;
+; -0.862 ; present_state.sigfalha ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.439     ; 0.910      ;
+; -0.854 ; present_state.sig2     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.439     ; 0.902      ;
+; -0.849 ; present_state.sig6     ; next_state.sig6     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.899      ;
+; -0.841 ; present_state.sig0     ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.441     ; 0.887      ;
+; -0.839 ; present_state.sig1     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.889      ;
+; -0.839 ; present_state.sig6     ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.439     ; 0.887      ;
+; -0.836 ; present_state.sig1     ; next_state.sig3     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.886      ;
+; -0.823 ; present_state.sig2     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.439     ; 0.871      ;
+; -0.819 ; present_state.sig6     ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.871      ;
+; -0.782 ; present_state.sig2     ; next_state.sig0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.832      ;
+; -0.780 ; present_state.sig2     ; next_state.sig2     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.830      ;
+; -0.772 ; present_state.sigfalha ; display[4]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.824      ;
+; -0.763 ; present_state.sigfalha ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.815      ;
+; -0.763 ; present_state.sigfalha ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.815      ;
+; -0.763 ; present_state.sigfalha ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.815      ;
+; -0.724 ; present_state.sig0     ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.774      ;
+; -0.724 ; present_state.sig0     ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.774      ;
+; -0.723 ; present_state.sig0     ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.773      ;
+; -0.721 ; present_state.sig0     ; display[3]~reg0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.771      ;
+; -0.718 ; present_state.sig0     ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.437     ; 0.768      ;
+; -0.708 ; present_state.sig0     ; led~reg0            ; clk          ; clk         ; 0.500        ; -0.439     ; 0.756      ;
+; -0.650 ; present_state.sig6     ; display[2]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.702      ;
+; -0.624 ; present_state.sig6     ; display[1]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.676      ;
+; -0.622 ; present_state.sig6     ; display[6]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.674      ;
+; -0.614 ; present_state.sig0     ; display[5]~reg0     ; clk          ; clk         ; 0.500        ; -0.441     ; 0.660      ;
+; -0.597 ; present_state.sigfalha ; next_state.sigfalha ; clk          ; clk         ; 0.500        ; -0.439     ; 0.645      ;
+; -0.594 ; present_state.sigfalha ; display[0]~reg0     ; clk          ; clk         ; 0.500        ; -0.435     ; 0.646      ;
+; -0.335 ; led~reg0               ; next_state.sig4     ; clk          ; clk         ; 1.000        ; -0.041     ; 1.281      ;
+; -0.278 ; next_state.sig6        ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.041     ; 1.224      ;
+; -0.236 ; start_led_e_next_state ; next_state.sig5     ; clk          ; clk         ; 1.000        ; 0.143      ; 1.366      ;
+; -0.236 ; start_led_e_next_state ; next_state.sig1     ; clk          ; clk         ; 1.000        ; 0.143      ; 1.366      ;
+; -0.216 ; led~reg0               ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.041     ; 1.162      ;
+; -0.216 ; led~reg0               ; next_state.sig5     ; clk          ; clk         ; 1.000        ; 0.142      ; 1.345      ;
+; -0.216 ; led~reg0               ; next_state.sig1     ; clk          ; clk         ; 1.000        ; 0.142      ; 1.345      ;
+; -0.166 ; led~reg0               ; next_state.sig0     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.114      ;
+; -0.164 ; led~reg0               ; next_state.sig2     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.112      ;
+; -0.163 ; led~reg0               ; next_state.sig3     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.111      ;
+; -0.155 ; start_present_state    ; present_state.sig4  ; clk          ; clk         ; 1.000        ; -0.042     ; 1.100      ;
+; -0.142 ; led~reg0               ; display[3]~reg0     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.090      ;
+; -0.090 ; next_state.sig4        ; next_state.sig4     ; clk          ; clk         ; 1.000        ; -0.041     ; 1.036      ;
+; -0.089 ; start_present_state    ; present_state.sig2  ; clk          ; clk         ; 1.000        ; -0.042     ; 1.034      ;
+; -0.084 ; start_present_state    ; present_state.sig3  ; clk          ; clk         ; 1.000        ; -0.042     ; 1.029      ;
+; -0.074 ; led~reg0               ; next_state.sigfalha ; clk          ; clk         ; 1.000        ; -0.043     ; 1.018      ;
+; -0.072 ; start_led_e_next_state ; display[4]~reg0     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.021      ;
+; -0.021 ; start_led_e_next_state ; next_state.sig6     ; clk          ; clk         ; 1.000        ; -0.040     ; 0.968      ;
+; -0.017 ; start_led_e_next_state ; next_state.sig2     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.966      ;
+; -0.016 ; start_led_e_next_state ; led~reg0            ; clk          ; clk         ; 1.000        ; -0.040     ; 0.963      ;
+; -0.015 ; start_led_e_next_state ; next_state.sig3     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.964      ;
++--------+------------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk'                                                                                              ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.182 ; led~reg0               ; led~reg0               ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; next_state.sig0        ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; next_state.sig2        ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; next_state.sig3        ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.275 ; start_led_e_next_state ; next_state.sig1        ; clk          ; clk         ; 0.000        ; 0.234      ; 0.593      ;
+; 0.279 ; start_led_e_next_state ; next_state.sig5        ; clk          ; clk         ; 0.000        ; 0.234      ; 0.597      ;
+; 0.308 ; start_led_e_next_state ; display[5]~reg0        ; clk          ; clk         ; 0.000        ; 0.042      ; 0.434      ;
+; 0.331 ; start_present_state    ; present_state.sigfalha ; clk          ; clk         ; 0.000        ; 0.045      ; 0.460      ;
+; 0.343 ; next_state.sigfalha    ; present_state.sigfalha ; clk          ; clk         ; -0.500       ; 0.439      ; 0.386      ;
+; 0.361 ; next_state.sig6        ; present_state.sig6     ; clk          ; clk         ; -0.500       ; 0.437      ; 0.402      ;
+; 0.437 ; start_present_state    ; present_state.sig6     ; clk          ; clk         ; 0.000        ; 0.045      ; 0.566      ;
+; 0.448 ; start_present_state    ; present_state.sig5     ; clk          ; clk         ; 0.000        ; 0.047      ; 0.579      ;
+; 0.449 ; start_present_state    ; present_state.sig1     ; clk          ; clk         ; 0.000        ; 0.047      ; 0.580      ;
+; 0.455 ; next_state.sig5        ; present_state.sig5     ; clk          ; clk         ; -0.500       ; 0.256      ; 0.315      ;
+; 0.472 ; next_state.sigfalha    ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.042      ; 0.598      ;
+; 0.486 ; led~reg0               ; display[2]~reg0        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.613      ;
+; 0.555 ; start_led_e_next_state ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.042      ; 0.681      ;
+; 0.581 ; next_state.sig3        ; present_state.sig3     ; clk          ; clk         ; -0.500       ; 0.437      ; 0.622      ;
+; 0.582 ; next_state.sig2        ; present_state.sig2     ; clk          ; clk         ; -0.500       ; 0.437      ; 0.623      ;
+; 0.592 ; next_state.sig4        ; present_state.sig4     ; clk          ; clk         ; -0.500       ; 0.439      ; 0.635      ;
+; 0.598 ; start_led_e_next_state ; display[3]~reg0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.727      ;
+; 0.602 ; next_state.sig4        ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.727      ;
+; 0.603 ; start_led_e_next_state ; display[0]~reg0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.732      ;
+; 0.605 ; led~reg0               ; display[5]~reg0        ; clk          ; clk         ; 0.000        ; 0.040      ; 0.729      ;
+; 0.614 ; next_state.sig1        ; present_state.sig1     ; clk          ; clk         ; -0.500       ; 0.256      ; 0.474      ;
+; 0.617 ; start_led_e_next_state ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.744      ;
+; 0.629 ; next_state.sig6        ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.754      ;
+; 0.641 ; start_led_e_next_state ; display[1]~reg0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.770      ;
+; 0.641 ; start_led_e_next_state ; display[6]~reg0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.770      ;
+; 0.641 ; start_led_e_next_state ; display[2]~reg0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.770      ;
+; 0.642 ; next_state.sig0        ; present_state.sig0     ; clk          ; clk         ; -0.500       ; 0.437      ; 0.683      ;
+; 0.645 ; led~reg0               ; display[4]~reg0        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.772      ;
+; 0.658 ; start_led_e_next_state ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.787      ;
+; 0.659 ; start_led_e_next_state ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.788      ;
+; 0.662 ; start_led_e_next_state ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.791      ;
+; 0.662 ; start_led_e_next_state ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.789      ;
+; 0.670 ; start_led_e_next_state ; led~reg0               ; clk          ; clk         ; 0.000        ; 0.043      ; 0.797      ;
+; 0.685 ; led~reg0               ; next_state.sig4        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.810      ;
+; 0.703 ; start_present_state    ; present_state.sig0     ; clk          ; clk         ; 0.000        ; 0.047      ; 0.834      ;
+; 0.705 ; start_led_e_next_state ; display[4]~reg0        ; clk          ; clk         ; 0.000        ; 0.045      ; 0.834      ;
+; 0.754 ; led~reg0               ; display[3]~reg0        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.881      ;
+; 0.768 ; start_present_state    ; present_state.sig3     ; clk          ; clk         ; 0.000        ; 0.047      ; 0.899      ;
+; 0.770 ; start_present_state    ; present_state.sig2     ; clk          ; clk         ; 0.000        ; 0.047      ; 0.901      ;
+; 0.820 ; led~reg0               ; next_state.sig3        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.947      ;
+; 0.821 ; led~reg0               ; next_state.sig2        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.948      ;
+; 0.822 ; led~reg0               ; next_state.sig6        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.947      ;
+; 0.823 ; led~reg0               ; next_state.sig0        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.950      ;
+; 0.824 ; led~reg0               ; next_state.sigfalha    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.948      ;
+; 0.835 ; start_present_state    ; present_state.sig4     ; clk          ; clk         ; 0.000        ; 0.047      ; 0.966      ;
+; 1.031 ; led~reg0               ; next_state.sig5        ; clk          ; clk         ; 0.000        ; 0.232      ; 1.347      ;
+; 1.031 ; led~reg0               ; next_state.sig1        ; clk          ; clk         ; 0.000        ; 0.232      ; 1.347      ;
+; 1.227 ; present_state.sig0     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; -0.162     ; 0.669      ;
+; 1.294 ; present_state.sigfalha ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; -0.351     ; 0.547      ;
+; 1.299 ; present_state.sig5     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; -0.162     ; 0.741      ;
+; 1.312 ; present_state.sig0     ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; -0.354     ; 0.562      ;
+; 1.314 ; present_state.sigfalha ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.570      ;
+; 1.338 ; present_state.sig1     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; -0.162     ; 0.780      ;
+; 1.345 ; present_state.sig6     ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.601      ;
+; 1.345 ; present_state.sig6     ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.601      ;
+; 1.345 ; present_state.sig6     ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.601      ;
+; 1.346 ; present_state.sig6     ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.602      ;
+; 1.347 ; present_state.sig6     ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.603      ;
+; 1.359 ; present_state.sig4     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; -0.162     ; 0.801      ;
+; 1.407 ; present_state.sig0     ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.660      ;
+; 1.409 ; present_state.sig2     ; next_state.sig2        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.662      ;
+; 1.410 ; present_state.sig0     ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.663      ;
+; 1.410 ; present_state.sig0     ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.663      ;
+; 1.410 ; present_state.sig0     ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.663      ;
+; 1.412 ; present_state.sig0     ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.665      ;
+; 1.438 ; present_state.sig5     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.353     ; 0.689      ;
+; 1.439 ; present_state.sigfalha ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.692      ;
+; 1.466 ; present_state.sig0     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.353     ; 0.717      ;
+; 1.472 ; present_state.sig6     ; display[5]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.725      ;
+; 1.477 ; present_state.sig6     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.350     ; 0.731      ;
+; 1.489 ; present_state.sigfalha ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.745      ;
+; 1.490 ; present_state.sigfalha ; display[6]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.746      ;
+; 1.490 ; present_state.sigfalha ; display[2]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.746      ;
+; 1.490 ; present_state.sigfalha ; display[1]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.746      ;
+; 1.498 ; present_state.sig2     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.751      ;
+; 1.501 ; present_state.sig2     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.754      ;
+; 1.511 ; present_state.sig3     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.764      ;
+; 1.512 ; present_state.sig6     ; display[0]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.768      ;
+; 1.514 ; present_state.sig0     ; display[4]~reg0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.767      ;
+; 1.556 ; present_state.sig1     ; next_state.sig3        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.809      ;
+; 1.557 ; present_state.sig1     ; next_state.sig2        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.810      ;
+; 1.559 ; present_state.sig1     ; next_state.sig0        ; clk          ; clk         ; -0.500       ; -0.351     ; 0.812      ;
+; 1.573 ; present_state.sig2     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.353     ; 0.824      ;
+; 1.578 ; present_state.sig4     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; -0.162     ; 1.020      ;
+; 1.579 ; present_state.sig2     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.353     ; 0.830      ;
+; 1.585 ; present_state.sig4     ; led~reg0               ; clk          ; clk         ; -0.500       ; -0.353     ; 0.836      ;
+; 1.588 ; present_state.sig0     ; next_state.sigfalha    ; clk          ; clk         ; -0.500       ; -0.354     ; 0.838      ;
+; 1.593 ; present_state.sig0     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; -0.162     ; 1.035      ;
+; 1.603 ; present_state.sigfalha ; display[3]~reg0        ; clk          ; clk         ; -0.500       ; -0.348     ; 0.859      ;
+; 1.620 ; present_state.sig0     ; next_state.sig4        ; clk          ; clk         ; -0.500       ; -0.353     ; 0.871      ;
+; 1.637 ; present_state.sig1     ; next_state.sig6        ; clk          ; clk         ; -0.500       ; -0.353     ; 0.888      ;
+; 1.639 ; present_state.sig5     ; next_state.sig4        ; clk          ; clk         ; -0.500       ; -0.353     ; 0.890      ;
+; 1.641 ; present_state.sig3     ; next_state.sig4        ; clk          ; clk         ; -0.500       ; -0.353     ; 0.892      ;
+; 1.642 ; present_state.sig5     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; -0.162     ; 1.084      ;
+; 1.645 ; present_state.sig2     ; next_state.sig5        ; clk          ; clk         ; -0.500       ; -0.162     ; 1.087      ;
+; 1.645 ; present_state.sig2     ; next_state.sig1        ; clk          ; clk         ; -0.500       ; -0.162     ; 1.087      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.456  ; 0.182 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -2.456  ; 0.182 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -39.571 ; 0.0   ; 0.0      ; 0.0     ; -36.41              ;
+;  clk             ; -39.571 ; 0.000 ; N/A      ; N/A     ; -36.410             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; led           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[0]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[1]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[2]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[3]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[4]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[5]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; display[6]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; numero[3]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; numero[1]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; numero[2]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; insere                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; numero[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; led           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; display[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; display[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; display[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.33 V              ; -0.00467 V          ; 0.226 V                              ; 0.087 V                              ; 2.91e-09 s                  ; 2.74e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.33 V             ; -0.00467 V         ; 0.226 V                             ; 0.087 V                             ; 2.91e-09 s                 ; 2.74e-09 s                 ; Yes                       ; Yes                       ;
+; display[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; display[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; display[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; display[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; led           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; display[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; display[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; display[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.33 V              ; -0.00265 V          ; 0.133 V                              ; 0.056 V                              ; 3.55e-09 s                  ; 3.31e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.33 V             ; -0.00265 V         ; 0.133 V                             ; 0.056 V                             ; 3.55e-09 s                 ; 3.31e-09 s                 ; Yes                       ; Yes                       ;
+; display[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; display[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; display[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; display[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; led           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; display[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; display[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; display[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.64 V              ; -0.0113 V           ; 0.208 V                              ; 0.179 V                              ; 2.38e-09 s                  ; 2.23e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.64 V             ; -0.0113 V          ; 0.208 V                             ; 0.179 V                             ; 2.38e-09 s                 ; 2.23e-09 s                 ; No                        ; Yes                       ;
+; display[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; display[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; display[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; display[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 42       ; 101      ; 8        ; 8        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 42       ; 101      ; 8        ; 8        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 97    ; 97   ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; insere     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; display[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; insere     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; numero[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; display[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Jan 14 10:12:52 2025
+Info: Command: quartus_sta state_machine_race -c state_machine_race
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'state_machine_race.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.456
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.456             -39.571 clk 
+Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.402               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -36.410 clk 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.186
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.186             -34.659 clk 
+Info (332146): Worst-case hold slack is 0.354
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.354               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -36.410 clk 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.274
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.274             -17.335 clk 
+Info (332146): Worst-case hold slack is 0.182
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.182               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -31.020 clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Tue Jan 14 10:12:58 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:03
+
+

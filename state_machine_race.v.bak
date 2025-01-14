@@ -1,0 +1,108 @@
+module state_machine_race (
+    input clk,
+    input reset,
+    input wire[3:0] numero,
+    input insere,
+    output reg led,
+    output reg[6:0] display
+);
+
+    // Definição dos estados
+    localparam sig0 = 3'b000;
+    localparam sig1 = 3'b001;
+    localparam sig2 = 3'b010;
+    localparam sig3 = 3'b011;
+    localparam sig4 = 3'b100;
+    localparam sig5 = 3'b101;
+    localparam sig6 = 3'b110;
+    localparam sigfalha = 3'b111;
+
+    // Variáveis para o estado atual e próximo
+    reg [2:0] present_state, next_state;
+
+    // Lógica de próximo estado
+    always @(posedge insere) begin
+        case (present_state)
+            sig5:
+                if (numero == 4'b1001)
+                    next_state = sig6;
+                else if (led == 1)
+                    led = 0;
+                else
+                    next_state = sigfalha;
+
+            sig4:
+                if (numero == 4'b0101)
+                    next_state = sig5;
+                else if (led == 1)
+                    led = 0;
+                else
+                    next_state = sigfalha;
+            sig3:
+                if (numero == 4'b1001)
+                    next_state = sig4;
+                else if (led == 1)
+                    led = 0;
+                else
+                    next_state = sigfalha;
+            sig2:
+                if (numero == 4'b0111)
+                    next_state = sig3;
+                else if (led == 1)
+                    led = 0;
+                else
+                    next_state = sigfalha;
+            sig1:
+                if (numero == 4'b0011)
+                    next_state = sig2;
+                else if (led == 1)
+                    led = 0;
+                else
+                    next_state = sigfalha;
+            sig0:
+                if (numero == 4'b0101)
+                    next_state = sig1;
+                else if (led == 1)
+                    led = 0;
+                else
+                    next_state = sigfalha;
+            default:
+                next_state = present_state;
+        endcase
+    end
+
+    // Lógica para o display
+    always @(posedge clk) begin
+        if(present_state == sigfalha)
+            display = 7'b0111000;
+        else if(present_state == sig6)
+            display = (led == 1) ? 7'b0100101 : 7'b0011000;
+        else 
+            case (numero)
+                4'b1001: display = 7'b0000100;
+                4'b1000: display = 7'b0000000;
+                4'b0111: display = 7'b0001111;
+                4'b0110: display = 7'b0100000;
+                4'b0101: display = 7'b0100100;
+                4'b0100: display = 7'b1001100;
+                4'b0011: display = 7'b0000110;
+                4'b0010: display = 7'b0010010;
+                4'b0001: display = 7'b1001111;
+                default: display = 7'b0000001;
+            endcase
+    end
+
+    // Lógica de troca de estados
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            present_state <= sig0;
+            next_state <= sig0;
+            led <= 1'b1;
+            display <= 7'b0000001; // Display inicial
+        end else begin
+            present_state <= next_state;
+        end
+    end
+
+endmodule
+
