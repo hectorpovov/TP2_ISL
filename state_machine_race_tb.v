@@ -23,7 +23,7 @@ initial begin
     $dumpfile("state_machine_race.vcd");
     $dumpvars(0, state_machine_race_tb);
 
-    reset = 0; insere = 0; clk = 0;
+    reset = 1; insere = 0; clk = 0;
     numero = 4'b0101; #10; insere = 1; #10; insere = 0; 
     numero = 4'b0011; #10; insere = 1; #10; insere = 0;
     numero = 4'b0111; #10; insere = 1; #10; insere = 0;
@@ -31,7 +31,7 @@ initial begin
     numero = 4'b1100; #10; insere = 1; #10; insere = 0;
     numero = 4'b0101; #10; insere = 1; #10; insere = 0;
     numero = 4'b1001; #10; insere = 1; #10; insere = 0; #10;
-    reset = 1; #10 ; reset = 0; #10;
+    insere = 1;  #10; reset = 0; #10; reset = 1; #10; insere = 0; #10;
     numero = 4'b0101; #10; insere = 1; #10; insere = 0;
     numero = 4'b0011; #10; insere = 1; #10; insere = 0;
     numero = 4'b0111; #10; insere = 1; #10; insere = 0;
@@ -39,7 +39,7 @@ initial begin
     numero = 4'b0101; #10; insere = 1; #10; insere = 0;
     numero = 4'b0010; #10; insere = 1; #10; insere = 0;
     numero = 4'b1001; #10; insere = 1; #10; insere = 0; #10;
-    reset = 1; #10 ; reset = 0; #10;
+    insere = 1;  #10; reset = 0; #10; reset = 1; #10; insere = 0; #10;
     numero = 4'b0101; #10; insere = 1; #10; insere = 0;
     numero = 4'b0011; #10; insere = 1; #10; insere = 0;
     numero = 4'b0010; #10; insere = 1; #10; insere = 0;

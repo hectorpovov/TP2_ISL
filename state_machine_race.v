@@ -3,8 +3,8 @@ module state_machine_race (
     input reset,
     input wire[3:0] numero,
     input insere,
-    output reg led,
-    output reg[6:0] display
+    output reg led = 0,
+    output reg[6:0] display = 7'b0000001
 );
 
 
@@ -20,101 +20,100 @@ module state_machine_race (
     
 
     //variaveis que guardam o proximo estado e o estado atual
-    reg [2:0] present_state, next_state;
+    reg [2:0] present_state = 3'b000;
+    reg [2:0] next_state = 3'b000;
 
 
-    reg start_led_e_next_state = 0;
-    reg start_display = 0;
-    reg start_present_state = 0;
+
 
     //logica de proximo estado que roda sempre que alguem insere um numero
-    always @(posedge clk) begin
-        if(start_led_e_next_state == 1)begin
-            if(insere) begin
+    always @(negedge insere) begin
+
                 if(numero < 4'b1010) begin
                     case (present_state)
-                        sigfalha:
-                            next_state = present_state;
-                        sig6:
-                            next_state = present_state;
-                        sig5:
+                        sigfalha: begin
+                            next_state = present_state; end
+                        sig6:begin
+                            next_state = present_state; end
+                        sig5:begin
                             if (numero == 4'b1001)
                                 next_state = sig6;
                             else
-                                if(led == 1)
-                                    led = 0;
+                                if(led == 0)
+                                    led = 1;
                                 else
-                                    next_state = sigfalha;
+                                    next_state = sigfalha;end
                             
-                        sig4:
+                        sig4:begin
                             if (numero == 4'b0101)
                                 next_state = sig5;
                             else
-                                if(led == 1)
-                                    led = 0;
+                                if(led == 0)
+                                    led = 1;
                                 else
-                                    next_state = sigfalha;
-                        sig3:
+                                    next_state = sigfalha;end
+                        sig3:begin
                             if (numero == 4'b1001)
                                 next_state = sig4;
                             else
-                                if(led == 1)
-                                    led = 0;
+                                if(led == 0)
+                                    led = 1;
                                 else
-                                    next_state = sigfalha;
-                        sig2:
+                                    next_state = sigfalha;end
+                        sig2:begin
                             if (numero == 4'b0111)
                                 next_state = sig3;
                             else
-                                if(led == 1)
-                                    led = 0;
+                                if(led == 0)
+                                    led = 1;
                                 else
-                                    next_state = sigfalha;
-                        sig1:
+                                    next_state = sigfalha;end
+                        sig1:begin
                             if (numero == 4'b0011)
                                 next_state = sig2;
                             else
-                                if(led == 1)
-                                    led = 0;
+                                if(led == 0)
+                                    led = 1;
+                                else
+                                    next_state = sigfalha;end
+                        sig0:
+                        begin
+                            if (numero ==4'b0101) begin
+                                next_state = sig1;
+                            end else begin
+                                if (led == 0)
+                                    led = 1;
                                 else
                                     next_state = sigfalha;
-                        sig0:
-                            if (numero == 4'b0101)
-                                next_state = sig1;
-                            else
-                                if(led == 1)
-                                    led = 0;
-                                else
-                                    next_state = sigfalha; 
-                        default:
-                            next_state = sig0;
+                            end
+                            
+                        end
+                        default:begin
+                            next_state = sig0;end
                     endcase 
                 end else begin
                     next_state = present_state;
                 end
-            end
-            if(reset) begin
-                next_state = sig0;
-                led = 1;
-            end
-        end else begin
-            led = 1;
-            next_state = 3'b000;
-            start_led_e_next_state = 1;
-        end 
+
+                if(reset == 1'b0)begin
+                    next_state = sig0;
+                    led = 0;
+                end
+
+            
+
     end
 
     //logica de saida para os estados
-    always @(posedge clk) begin
+    always @(negedge insere) begin
 
-        if(start_display == 1) begin
-            if(present_state == sig0 && reset == 1'b1)
+            if(present_state == sig0 && reset == 1'b0)
                 display = 7'b0000001;
-            else
+            else if(insere == 1'b0) begin
                 if(present_state == sigfalha)
                     display = 7'b0111000;
                 else if(present_state == sig6)
-                    if(led == 1)
+                    if(led == 0)
                         display = 7'b0100100;
                     else
                         display = 7'b0011000;
@@ -141,24 +140,17 @@ module state_machine_race (
                         display = 7'b0000001;  
                     else
                         display = 7'b1111110;  
-        end else begin
-            display = 7'b0000001;
-            start_display = 1;
-
-        end
+            end
     end
 
     //logica de troca de estados
-    always @(negedge clk) begin
-        if(start_present_state == 1'b1)
-            if (reset == 1'b1) begin 
-                present_state = sig0;
-            end else begin
-                present_state = next_state;
-            end
-        else 
-            present_state = 3'b000;
-            start_present_state = 1'b1;
+    always @(posedge clk) begin
+
+        if (reset == 1'b0) begin 
+            present_state = sig0;
+        end else begin
+            present_state = next_state; 
+        end
         
 
     end

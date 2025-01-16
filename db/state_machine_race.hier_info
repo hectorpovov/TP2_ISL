@@ -1,16 +1,4 @@
 |state_machine_race
-clk => start_display.CLK
-clk => display[0]~reg0.CLK
-clk => display[1]~reg0.CLK
-clk => display[2]~reg0.CLK
-clk => display[3]~reg0.CLK
-clk => display[4]~reg0.CLK
-clk => display[5]~reg0.CLK
-clk => display[6]~reg0.CLK
-clk => start_led_e_next_state.CLK
-clk => led~reg0.CLK
-clk => next_state~9.DATAIN
-clk => start_present_state.CLK
 clk => present_state~1.DATAIN
 reset => next_state.OUTPUTSELECT
 reset => next_state.OUTPUTSELECT
@@ -74,22 +62,22 @@ numero[3] => Equal6.IN1
 numero[3] => Equal7.IN1
 numero[3] => Equal8.IN1
 numero[3] => Equal9.IN0
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => next_state.OUTPUTSELECT
-insere => led.OUTPUTSELECT
-led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[0] <= display[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[1] <= display[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[2] <= display[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[3] <= display[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[4] <= display[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[5] <= display[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-display[6] <= display[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+insere => led~reg0.CLK
+insere => display[0]~reg0.CLK
+insere => display[1]~reg0.CLK
+insere => display[2]~reg0.CLK
+insere => display[3]~reg0.CLK
+insere => display[4]~reg0.CLK
+insere => display[5]~reg0.CLK
+insere => display[6]~reg0.CLK
+insere => next_state~9.DATAIN
+led << led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[0] << display[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] << display[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[2] << display[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[3] << display[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] << display[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[5] << display[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[6] << display[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

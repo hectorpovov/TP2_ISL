@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "insere",
+					"strict" : false
+				},
+				{
 					"name" : "numero[3]",
 					"strict" : false
 				},
@@ -45,10 +49,6 @@
 				},
 				{
 					"name" : "numero[2]",
-					"strict" : false
-				},
-				{
-					"name" : "insere",
 					"strict" : false
 				},
 				{

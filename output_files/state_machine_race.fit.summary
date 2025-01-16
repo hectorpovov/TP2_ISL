@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Jan 14 10:12:35 2025
+Fitter Status : Successful - Wed Jan 15 11:36:49 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : state_machine_race
 Top-level Entity Name : state_machine_race
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 76 / 114,480 ( < 1 % )
-    Total combinational functions : 76 / 114,480 ( < 1 % )
-    Dedicated logic registers : 26 / 114,480 ( < 1 % )
-Total registers : 26
+Total logic elements : 70 / 114,480 ( < 1 % )
+    Total combinational functions : 70 / 114,480 ( < 1 % )
+    Dedicated logic registers : 24 / 114,480 ( < 1 % )
+Total registers : 24
 Total pins : 15 / 529 ( 3 % )
 Total virtual pins : 0
 Total memory bits : 0 / 3,981,312 ( 0 % )
